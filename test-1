@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> grades(n);
+    for(int grades_i = 0; grades_i < n; grades_i++){
+       cin >> grades[grades_i];
+    }
+    //add start
+    int i = 0;
+    vector<int> res(n);
+    for (i = 0 ; i < grades.size(); i++){
+        if ( grades[i] % 5 > 2 ) {
+            res[i] = grades[i] + (5- grades[i] % 5 );
+        }else {
+           res[i] = grades[i];
+        }
+        
+        if (res[i] < 40) {
+            res[i] = grades[i];
+        }
+        cout<<res[i] <<"\n";
+    }   
+        //add end
+    
+    
+    
+
+    return 0;
+}
